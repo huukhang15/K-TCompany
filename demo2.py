@@ -139,7 +139,7 @@ whiteb="\033[1;37m"
 red="\033[0;31m"
 redb="\033[1;31m"
 end='\033[0m'
-
+os.system('clear')
 ndp_tool="\033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=>  "
 thanh = "\033[1;37m= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ="
 Write.Print(' \n',Colors.green_to_red,interval=0.0001,end='\r')
