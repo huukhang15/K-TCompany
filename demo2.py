@@ -128,23 +128,42 @@ tim = "\033[1;35m"
 lamd = "\033[1;34m"
 lam = "\033[1;36m"
 hong = "\033[1;95m"
+xnhac = "\033[1;36m"
+do = "\033[1;31m"
+luc = "\033[1;32m"
+vang = "\033[1;33m"
+xduong = "\033[1;34m"
+hong = "\033[1;35m"
+trang = "\033[1;37m"
+whiteb="\033[1;37m"
+red="\033[0;31m"
+redb="\033[1;31m"
+end='\033[0m'
 
-os.system('clear') 
-banner = f'''
-{xduong}██╗  ██╗██╗  ██╗ █████╗ ███╗   ██╗ ██████╗      ██████╗ █████╗ ██████╗ ██╗██╗      █████╗  ██████╗
-{do2}██║ ██╔╝██║  ██║██╔══██╗████╗  ██║██╔════╝     ██╔════╝██╔══██╗██╔══██╗██║██║     ██╔══██╗██╔════╝
-{tim2}█████╔╝ ███████║███████║██╔██╗ ██║██║  ███╗    ██║     ███████║██║  ██║██║██║     ███████║██║     
-{vang2}██╔═██╗ ██╔══██║██╔══██║██║╚██╗██║██║   ██║    ██║     ██╔══██║██║  ██║██║██║     ██╔══██║██║     
-{luc}██║  ██╗██║  ██║██║  ██║██║ ╚████║╚██████╔╝    ╚██████╗██║  ██║██████╔╝██║███████╗██║  ██║╚██████╗
-╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝╚═╝  ╚═╝╚═════╝ ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝
-                                   Bản Quyền By KhangCadilac \t   
-                        ╔══════════════════════════════════════════════╗ {xn2}
-                        ||➽ Facebook:NguyenHuuKhang.Profile\t      || {trang}        
-                        ||➽ Telegram:@nhk1510z\t                      ||     {hong}
-                        ||➽ Gmail:huukhangz.info\t              ||        {do2}
-                        ╚══════════════════════════════════════════════╝   {vang3}
-                                                                                                 
-'''
-thanhdep= trang + red + "[" + luc + "✓" + red + "] " + trang + "➽ "
-dau="\033[1;31m[\033[1;37m×.×\033[1;31m] \033[1;37m➽"
-print(banner)
+ndp_tool="\033[1;31m[\033[1;37m=.=\033[1;31m] \033[1;37m=>  "
+thanh = "\033[1;37m= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ="
+Write.Print(' \n',Colors.green_to_red,interval=0.0001,end='\r')
+Write.Print('=================================================================================================== \n',Colors.yellow_to_red,interval=0.0001)
+Write.Print('██╗  ██╗██╗  ██╗ █████╗ ███╗   ██╗ ██████╗      ██████╗ █████╗ ██████╗ ██╗██╗      █████╗  ██████╗\n',Colors.blue_to_red,interval=0.0001)
+Write.Print('██║ ██╔╝██║  ██║██╔══██╗████╗  ██║██╔════╝     ██╔════╝██╔══██╗██╔══██╗██║██║     ██╔══██╗██╔════\n',Colors.red_to_green,interval=0.0001)
+Write.Print('█████╔╝ ███████║███████║██╔██╗ ██║██║  ███╗    ██║     ███████║██║  ██║██║██║     ███████║██║     \n',Colors.yellow_to_red,interval=0.0001)
+Write.Print('██╔═██╗ ██╔══██║██╔══██║██║╚██╗██║██║   ██║    ██║     ██╔══██║██║  ██║██║██║     ██╔══██║██║     \n',Colors.blue_to_cyan,interval=0.0001)
+Write.Print('██║  ██╗██║  ██║██║  ██║██║ ╚████║╚██████╔╝    ╚██████╗██║  ██║██████╔╝██║███████╗██║  ██║╚██████╗\n',Colors.yellow_to_red,interval=0.0001)
+Write.Print('╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝╚═╝  ╚═╝╚═════╝ ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝\n',Colors.red_to_green,interval=0.0001,end='\r')
+Write.Print('➽ Facebook:NguyenHuuKhang.Profile\n',Colors.blue_to_white,interval=0.0001)
+Write.Print('➽ Telegram:@nhk1510z\n',Colors.white_to_blue,interval=0.0001)
+Write.Print('➽ Gmail:huukhangz.info@gmail.com \n',Colors.blue_to_purple,interval=0.0001)
+Write.Print('================================== \n',Colors.red_to_green,interval=0.0001)
+token_tds = input(f'{ndp_tool}{luc}Vui Lòng Nhập Token TĐS{trang}:{vang} ')
+check_log = requests.get('https://traodoisub.com/api/?fields=profile&access_token='+token_tds).json()
+if 'success' in check_log:
+    print(f'{xnhac}Đăng Nhập Thành Công!')
+    user = check_log['data']['user']
+    xucon = check_log['data']['xu']
+    xudie = check_log['data']['xudie']
+else:
+    exit(f'{do}Đăng Nhập Thất Bại.')
+print(thanh)
+print(f'{ndp_tool}{luc}Tên Tài Khoản{trang}: {vang}{user}')
+print(f'{ndp_tool}{luc}Xu Hiện Tại{trang}: {vang}{xucon}')
+print(f'{ndp_tool}{luc}Xu Bị Trừ{trang}: {vang}{xudie}')
